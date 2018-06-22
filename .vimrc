@@ -55,3 +55,4 @@ nnoremap <SPACE> <Nop>
 " ignorecase by default ignores case. smartcase recognizes automatically that you do not want to ignore case when you search for capital letters
 :set ignorecase
 :set smartcase
+
