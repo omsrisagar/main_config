@@ -1,4 +1,4 @@
-# my-vimrc
+# Welcome!
 My own customized vimrc, bashrc, bash\_profile built from scratch!
 # Instructions
 - Use .bash\_profile for Mac
