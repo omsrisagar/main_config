@@ -169,19 +169,18 @@ if ! shopt -oq posix; then
 fi
 
 # add pycharm to path
-export PATH="$HOME/pycharm-2020.2.3/bin:$PATH"
-alias pycharm="$HOME/pycharm-2020.2.3/bin/pycharm.sh"
+export PATH="$HOME/pycharm-professional/bin:$PATH"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/export/home/cuda00031/srikanth/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('$HOME/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/export/home/cuda00031/srikanth/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/export/home/cuda00031/srikanth/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/export/home/cuda00031/srikanth/miniconda3/bin:$PATH"
+        export PATH="$HOME/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup

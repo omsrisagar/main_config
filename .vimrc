@@ -74,8 +74,8 @@ set number
 syntax on
 " Set font and size
 if has("gui_running")
-    if has("gui_gtk2")
-        set guifont=Inconsolata\ 12
+    if has("gui_gtk3")
+        set guifont=Inconsolata\ 13
     elseif has("gui_macvim")
         set guifont=Menlo\ Regular:h14
     elseif has("gui_win32")
@@ -102,6 +102,8 @@ endfunction
 vnoremap <silent> / :<C-U>call RangeSearch('/')<CR>:if strlen(g:srchstr) > 0\|exec '/'.g:srchstr\|endif<CR>
 vnoremap <silent> ? :<C-U>call RangeSearch('?')<CR>:if strlen(g:srchstr) > 0\|exec '?'.g:srchstr\|endif<CR>
 
+" To preserve cursor being in same column when we do gg, G, j, etc.
+set nostartofline
 " Set fold method based on systax:
 " https://unix.stackexchange.com/questions/141097/how-to-enable-and-use-code-folding-in-vim"
 set foldmethod=syntax
