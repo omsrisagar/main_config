@@ -186,3 +186,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+alias cdp='cd ../../${HOSTNAME}2/srikanth/Projects/babyai'
