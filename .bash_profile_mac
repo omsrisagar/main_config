@@ -1,0 +1,29 @@
+export CLICOLOR=1
+source /usr/local/git/contrib/completion/git-completion.bash
+source /usr/local/git/contrib/completion/git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=true
+#export PS1="\W \$ "
+export PS1='\W $(__git_ps1 "(%s)") \$ '
+#export PS1='\t H#\! \u:\w$(__git_ps1 "{%s}") -->> '
+
+export JAVA_HOME='/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home'
+export PATH=$JAVA_HOME/bin:$PATH
+
+alias ls='/bin/ls -a'
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/srikanth/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+            if [ -f "/Users/srikanth/miniconda3/etc/profile.d/conda.sh" ]; then
+                        . "/Users/srikanth/miniconda3/etc/profile.d/conda.sh"
+                            else
+                                        export PATH="/Users/srikanth/miniconda3/bin:$PATH"
+                                            fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+

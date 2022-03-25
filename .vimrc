@@ -48,6 +48,8 @@ vnoremap // y/<C-R>"<CR>
 set so=5
 " show the command typed/invoked
 set showcmd
+"Set wrap
+set wrap
 " set the leader key to space
 nnoremap <SPACE> <Nop>
 :let mapleader = " "
@@ -99,3 +101,10 @@ function! RangeSearch(direction)
 endfunction
 vnoremap <silent> / :<C-U>call RangeSearch('/')<CR>:if strlen(g:srchstr) > 0\|exec '/'.g:srchstr\|endif<CR>
 vnoremap <silent> ? :<C-U>call RangeSearch('?')<CR>:if strlen(g:srchstr) > 0\|exec '?'.g:srchstr\|endif<CR>
+
+" Set fold method based on systax:
+" https://unix.stackexchange.com/questions/141097/how-to-enable-and-use-code-folding-in-vim"
+set foldmethod=syntax
+
+" Go to matching if, endif by pressing %
+runtime macros/matchit.vim
