@@ -188,4 +188,16 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# get file creation time
+get_crtime() {
+
+    for target in "${@}"; do
+        inode=$(stat -c '%i' "${target}")
+        fs=$(df  --output=source "${target}"  | tail -1)
+        crtime=$(sudo debugfs -R 'stat <'"${inode}"'>' "${fs}" 2>/dev/null | 
+        grep -oP 'crtime.*--\s*\K.*')
+        printf "%s\t%s\n" "${crtime}" "${target}"
+    done
+}
+
 alias cdp='cd ../../${HOSTNAME}2/srikanth/Projects/babyai'
