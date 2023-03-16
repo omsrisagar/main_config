@@ -200,4 +200,5 @@ get_crtime() {
     done
 }
 
-alias cdp='cd ../../${HOSTNAME}2/srikanth/Projects/babyai'
+alias cdp='cd ../../${HOSTNAME}2/srikanth/Projects/'
+alias cdd='cd ../../${HOSTNAME}2/srikanth/datasets/'
