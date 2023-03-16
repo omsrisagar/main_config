@@ -200,5 +200,5 @@ get_crtime() {
     done
 }
 
-alias cdp='cd ../../${HOSTNAME}2/srikanth/Projects/'
-alias cdd='cd ../../${HOSTNAME}2/srikanth/datasets/'
+alias cdp='cd /export/home/${HOSTNAME}2/srikanth/Projects/'
+alias cdd='cd /export/home/${HOSTNAME}2/srikanth/datasets/'
