@@ -1,4 +1,5 @@
 " Normal mode commands
+
 " set the leader key to space
 nnoremap <SPACE> <Nop>
 :let mapleader = " "
@@ -36,7 +37,13 @@ inoremap <C-e> <Esc>la
 "nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 nnoremap <C-s> :%s/\<<C-r><C-w>\>/
 
-" Switch to previous active tab -> not working in Pycharm. Use C-6 in Pycharm!
+" When several buffers are open, pressing Space l will list the buffers by numbers;
+" just press the number (of the buffer) you want to open or even (partially)
+" matching text of the buffername
+nnoremap <Leader>l :buffers<CR>:buffer<Space>
+
+" Switch to previous active tab -> not working in Pycharm. Use C-6 or
+" <Leader>l in Pycharm!
 if !exists('g:lasttab')
   let g:lasttab = 1
 endif
@@ -62,6 +69,10 @@ set wrap
 :set smartcase
 :set autoread " this will autoread changes to file content
 :set timeoutlen=500 ttimeoutlen=10
+
+" Enable auto indentation
+:set autoindent
+filetype plugin indent on
 
 " set tab space to 4 spaces
 filetype plugin indent on
