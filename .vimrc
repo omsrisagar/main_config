@@ -1,4 +1,10 @@
 " Normal mode commands
+" set the leader key to space
+nnoremap <SPACE> <Nop>
+:let mapleader = " "
+
+"Map switch to last active tab C-6 to <Leader>l
+nmap <Leader>l <C-6>
 
 " this will place the cursor in the middle of the current line (excluding whitespaces at the start and end). Does not work in PyCharm :( but works otherwise
 noremap gm :cal cursor(virtcol('_'), virtcol('$')/2)<CR>
@@ -30,7 +36,7 @@ inoremap <C-e> <Esc>la
 "nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 nnoremap <C-s> :%s/\<<C-r><C-w>\>/
 
-" Switch to previous active tab
+" Switch to previous active tab -> not working in Pycharm. Use C-6 in Pycharm!
 if !exists('g:lasttab')
   let g:lasttab = 1
 endif
@@ -50,9 +56,6 @@ set so=5
 set showcmd
 "Set wrap
 set wrap
-" set the leader key to space
-nnoremap <SPACE> <Nop>
-:let mapleader = " "
 " Enable ignorecase and smartcase search
 " ignorecase by default ignores case. smartcase recognizes automatically that you do not want to ignore case when you search for capital letters
 :set ignorecase
