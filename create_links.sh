@@ -6,5 +6,4 @@ ln -s ~/Projects/main_config/.ideavimrc ~/.ideavimrc
 ln -s ~/Projects/main_config/.inputrc ~/.inputrc
 ln -s ~/Projects/main_config/.tmux.conf ~/.tmux.conf
 ln -s ~/Projects/main_config/.vimrc ~/.vimrc
-scp ${1}@${2}:/export/home/${2}1/${1}/.wandb_api_key ~/.wandb_api_key
-scp ${1}@${2}:/export/home/${2}1/${1}/.openai_api_key ~/.openai_api_key
+scp ${1}@${2}:/export/home/${2}1/${1}/{.wandb_api_key, .openai_api_key} ~/
