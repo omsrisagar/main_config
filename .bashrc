@@ -199,8 +199,8 @@ get_crtime() {
     done
 }
 
-alias cdp='cd /export/home/${HOSTNAME}2/srikanth/Projects/'
-alias cdd='cd /export/home/${HOSTNAME}2/srikanth/datasets/'
+alias cdp='cd /export/home/${HOSTNAME}2/$USER/Projects/'
+alias cdd='cd /export/home/${HOSTNAME}2/$USER/datasets/'
 
 # For tensorboard
 alias tb='tensorboard --logdir'
