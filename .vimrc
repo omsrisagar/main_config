@@ -11,14 +11,14 @@ nmap <Leader>l <C-6>
 noremap gm :cal cursor(virtcol('_'), virtcol('$')/2)<CR>
 
 " Quick and useful insert mode commands
-
 " standard!
 imap jj <Esc>
 " go to just before the first non-blank text of the line
 inoremap II <Esc>I
 " go to the end of the line
 inoremap AA <Esc>A
-" start editing on a new line above the current line
+" start editing on a new line above the current line; for below line use
+" Ctrl+o o
 inoremap OO <Esc>O
 " change what is on the right of the cursor
 inoremap CC <Esc>C
@@ -27,9 +27,26 @@ inoremap SS <Esc>S
 " delete the current line (end in normal mode)
 inoremap DD <Esc>dd
 " undo
-inoremap UU <Esc>uu
-" jump the closing quotes or braces
-inoremap <C-e> <Esc>la
+inoremap UU <Esc>u
+" jump to after the closing quotes
+"inoremap <C-e>" <Esc>va"<Esc>a
+"inoremap <C-e>' <Esc>va'<Esc>a
+" Move to end of word
+inoremap LL <C-Right>
+" Move to beginning of word
+inoremap HH <C-Left>
+" Move down one line
+inoremap <C-j> <Down>
+" Move up one line
+inoremap <C-k> <Up>
+" Move left one character
+inoremap <C-h> <Left>
+" Move right one character
+inoremap <C-l> <Right>
+" Go to end of current word
+inoremap <C-f> <Esc>ea
+" Delete the word after cursor (C-w for word before the cursor)
+inoremap <C-q> <C-o>de
 
 " Search and replace the word under cursor
 " <C-r> allows you to paste the content in current register in command/insert mode.
@@ -45,7 +62,7 @@ nnoremap <Leader>l :buffers<CR>:buffer<Space>
 " Switch to previous active tab -> not working in Pycharm. Use C-6 or
 " <Leader>l in Pycharm!
 if !exists('g:lasttab')
-  let g:lasttab = 1
+   let g:lasttab = 1
 endif
 nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
@@ -65,10 +82,22 @@ set showcmd
 set wrap
 " Enable ignorecase and smartcase search
 " ignorecase by default ignores case. smartcase recognizes automatically that you do not want to ignore case when you search for capital letters
-:set ignorecase
-:set smartcase
-:set autoread " this will autoread changes to file content
-:set timeoutlen=500 ttimeoutlen=10
+set ignorecase
+set smartcase
+set autoread " this will autoread changes to file content
+set timeoutlen=500 ttimeoutlen=10
+" Change vim's current directory to the file currently open
+set autochdir
+
+" Both these below seem to slowdown vim in Pycharm
+"
+" autoindent essentially tells vim to apply the indentation of the current
+" line to the next
+" set autoindent
+
+" smartindent reacts to the syntax/style of the code you are editing
+" (especially for C). When having it on you also should have autoindent on.
+" set smartindent
 
 " Enable auto indentation
 :set autoindent
@@ -124,3 +153,7 @@ set foldmethod=syntax
 
 " Go to matching if, endif by pressing %
 runtime macros/matchit.vim
+
+" Split to the right (vertical split) and below (horizontal split) by default in screen splits
+set splitright
+set splitbelow

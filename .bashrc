@@ -190,7 +190,6 @@ unset __conda_setup
 
 # get file creation time
 get_crtime() {
-
     for target in "${@}"; do
         inode=$(stat -c '%i' "${target}")
         fs=$(df  --output=source "${target}"  | tail -1)
@@ -202,3 +201,11 @@ get_crtime() {
 
 alias cdp='cd /export/home/${HOSTNAME}2/srikanth/Projects/'
 alias cdd='cd /export/home/${HOSTNAME}2/srikanth/datasets/'
+
+# For tensorboard
+alias tb='tensorboard --logdir'
+
+#wandb.ai api key file
+export WANDB_API_KEY_FILE=$HOME/.wandb_api_key
+# open ai api key
+export OPENAI_API_KEY=$(cat $HOME/.openai_api_key)
